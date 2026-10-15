@@ -13,8 +13,8 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() in ("1", "true", "yes", 
 def csv_env(name, default=""):
     return [value.strip() for value in os.environ.get(name, default).split(",") if value.strip()]
 
-ALLOWED_HOSTS = csv_env("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1")
-CSRF_TRUSTED_ORIGINS = csv_env("DJANGO_CSRF_TRUSTED_ORIGINS", "http://localhost,http://127.0.0.1")
+ALLOWED_HOSTS = csv_env("DJANGO_ALLOWED_HOSTS","*", "localhost,127.0.0.1")
+CSRF_TRUSTED_ORIGINS = csv_env("DJANGO_CSRF_TRUSTED_ORIGINS","*", "http://localhost,http://127.0.0.1")
 
 INSTALLED_APPS = [
     "home.apps.HomeConfig",
