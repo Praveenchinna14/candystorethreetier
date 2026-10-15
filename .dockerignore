@@ -1,0 +1,42 @@
+# Git and CI
+.git
+.git/**
+.github
+.gitignore
+Jenkinsfile
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+env/
+
+# Local databases and generated assets
+db.sqlite3
+*.sqlite3
+staticfiles/
+media/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
