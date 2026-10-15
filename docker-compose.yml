@@ -36,7 +36,7 @@ services:
     networks:
       - app_net
     healthcheck:
-      test: ["CMD", "python", "-c", "import socket; s=socket.create_connection(('127.0.0.1',8000),2); s.close()"]
+      test: ["CMD", "python", "-c", "import socket; s=socket.create_connection(('127.0.0.1',8000),2); s.close()","0.0.0.0","*"]
       interval: 15s
       timeout: 5s
       retries: 5
