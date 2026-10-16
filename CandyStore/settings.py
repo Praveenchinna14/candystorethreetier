@@ -13,8 +13,8 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() in ("1", "true", "yes", 
 def csv_env(name, default=""):
     return [value.strip() for value in os.environ.get(name, default).split(",") if value.strip()]
 
-ALLOWED_HOSTS = csv_env("DJANGO_ALLOWED_HOSTS","*", "localhost,127.0.0.1")
-CSRF_TRUSTED_ORIGINS = csv_env("DJANGO_CSRF_TRUSTED_ORIGINS","*", "http://localhost,http://127.0.0.1")
+ALLOWED_HOSTS = csv_env("DJANGO_ALLOWED_HOSTS","localhost,127.0.0.1")
+CSRF_TRUSTED_ORIGINS = csv_env("DJANGO_CSRF_TRUSTED_ORIGINS","http://localhost,http://127.0.0.1")
 
 INSTALLED_APPS = [
     "home.apps.HomeConfig",
@@ -61,7 +61,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": os.environ.get("MYSQL_DATABASE", "candystore"),
         "USER": os.environ.get("MYSQL_USER", "candystore_app"),
-        "PASSWORD": os.environ.get("MYSQL_PASSWORD", ""),
+        "PASSWORD": os.environ.get("MYSQL_PASSWORD", "Admin123"),
         "HOST": os.environ.get("MYSQL_HOST", "db"),
         "PORT": os.environ.get("MYSQL_PORT", "3306"),
         "OPTIONS": {"charset": "utf8mb4"},
