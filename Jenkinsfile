@@ -20,7 +20,7 @@ pipeline {
         stage('Load deployment environment') {
             steps {
                 // Jenkins credential type: Secret file, ID: candystore-env-file
-                withCredentials([file(credentialsId: 'candystore-env-file', variable: 'ENV_FILE')]) {
+                withCredentials([file(credentialsId: '.env', variable: 'ENV_FILE')]) {
                     sh '''
                         cp "$ENV_FILE" .env
                         chmod 600 .env
